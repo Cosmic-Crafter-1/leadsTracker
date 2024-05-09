@@ -3,41 +3,50 @@ body {
     padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
     min-width: 400px;
+    max-height: 100px;
+    border-radius: 25px;
 }
 
 input {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
-    border: 1px solid #5f9341;
+    border: 1px solid black;
     margin-bottom: 4px;
 }
 
 button {
-    background: #5f9341;
+    background: black;
     color: white;
     padding: 10px 20px;
-    border: 1px solid #5f9341;
+    border: 1px solid black;
     font-weight: bold;
+    border-radius: 6px;
+}
+
+button:active {
+    transform: translate(1px,1px);
 }
 
 #delete-btn {
     background: white;
-    color: #5f9341;
+    color: black;
 }
 
 ul {
     margin-top: 20px;
     list-style: none;
     padding-left: 0;
+    font-size: 18px;
 }
 
 li {
-    margin-top: 5px;
+    margin: 0.5rem;
+
 }
 
 a {
-    color: #5f9341;
+    color: crimson;
 }
 
 

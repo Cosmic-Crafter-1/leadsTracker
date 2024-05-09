@@ -11,6 +11,13 @@ if (leadsFromLocalStorage) {
     render(myLeads)
 }
 
+
+//  Tabs.url is of this format : 
+
+//  const tabs = [
+//     {url: "https://www.linkedin.com/in/per-harald-borgen/"}
+// ]                                       
+
 tabBtn.addEventListener("click", function(){    
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
         myLeads.push(tabs[0].url)
@@ -22,15 +29,16 @@ tabBtn.addEventListener("click", function(){
 function render(leads) {
     let listItems = ""
     for (let i = 0; i < leads.length; i++) {
-        listItems += `
-            <li>
-                <a target='_blank' href='${leads[i]}'>
+        listItems += ` 
+          <li>
+            ${i+1}. <a target='_blank' href='${leads[i]}'>
                     ${leads[i]}
                 </a>
             </li>
         `
     }
-    ulEl.innerHTML = listItems
+    ulEl.innerHTML = `Total tracks: ${leads.length} ${listItems}`
+    
 }
 
 deleteBtn.addEventListener("dblclick", function() {
